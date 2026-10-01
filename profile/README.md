@@ -39,34 +39,37 @@ Relay is a modern desktop API client — a polished alternative to Postman and I
 ## Features
 
 ### 🌐 Every protocol in one place
-HTTP, **GraphQL**, **Server-Sent Events (SSE)**, **WebSocket**, **Socket.IO**, and **gRPC** — all in a single request editor.
+HTTP, **GraphQL**, **Server-Sent Events (SSE)**, **WebSocket**, **Socket.IO**, **gRPC** and **MCP** — all in one request editor. An MCP call discovers the server's tools, resources and prompts, seeds the arguments from the tool's schema, and shows the raw JSON-RPC exchange.
 
 ### 🔐 All the auth flows
-Bearer, Basic, **Digest (RFC 2617)**, API Key, **AWS Signature v4**, and **OAuth 2.0** — both Client Credentials and Authorization Code with **PKCE**, including browser sign-in, refresh tokens, and automatic refresh right before a request is sent.
+Bearer, Basic, **Digest** (MD5, SHA-256, SHA-512-256 and their `-sess` variants), API Key, **AWS Signature v4**, client certificates, and **OAuth 2.0** — Client Credentials, Authorization Code with **PKCE**, Password and Device Code, with browser sign-in, refresh tokens and automatic refresh before a request is sent.
 
 ### 🧬 Git-backed workspaces
-Store workspaces as clean, reviewable **YAML** and version them with Git — collaborate through pull requests while **secrets stay local**. Built-in **Git sync**, diff diagnostics, and conflict helpers for when a repo changes underneath you.
+Store workspaces as clean, reviewable **YAML** and version them with Git — collaborate through pull requests while **secrets stay local**. Built-in Git panel, diagnostics and a three-way conflict resolver for when a repo changes underneath you.
 
 ### 📜 Scriptable requests
-Pre-request and test scripts in **sandboxed JavaScript** (with legacy Tengo support) and a familiar `pm.*` API. Inject headers, assert responses, parse JSON, set variables. Imports, filesystem and network access are disabled; execution caps at 2s so scripts can't escape the sandbox or block the UI.
+Pre-request and test scripts in **sandboxed JavaScript** (with legacy Tengo support) and a familiar `pm.*` API: inject headers, rewrite the body, assert on status and JSON schema, set variables, call another endpoint with `pm.sendRequest`. `require` resolves bundled stand-ins for lodash, ajv, chai and friends, so imported Postman scripts keep working.
 
 ### 🔄 Imports that travel
-Import from **Postman, Insomnia, Bruno / OpenCollection, OpenAPI, HAR, curl**, or a full Relay backup. Export to Postman, OpenAPI, OpenCollection, or an all-data backup.
+Import from **Postman, Insomnia, Bruno / OpenCollection, OpenAPI (file or URL), HAR, curl**, or a full Relay backup. Export to Postman, OpenAPI, OpenCollection, or an all-data backup.
 
-### ▶️ Collection Runner
-Run saved requests as local smoke tests and export a shareable **HTML report**.
+### 🧪 Examples and a local mock server
+Save any response as a named example, secrets redacted, then serve a whole collection of them over HTTP on your own machine — and diff a fresh response against the example it should match.
+
+### ▶️ Collection Runner and CLI
+Run a collection sequentially or in parallel, with data files and iterations, export an **HTML report**, and see each collection's last run. `relay run` does the same in CI with JSON and JUnit reporters.
 
 ### 🧩 Code generation
-Copy any request as **cURL, Python (`requests`), JavaScript (`fetch`), or Go (`net/http`)** — more languages in the side panel.
+Copy any request as a runnable snippet in **14 targets** — cURL, HTTPie, `fetch`, Axios, Python, Go, Java, C#, PHP, Ruby, Swift, Kotlin, Rust and more.
 
 ### ⌨️ Keyboard-first
-Global search (`⌘K`), quick send (`⌘↵`), tab switching (`⌘1–⌘9`) — every shortcut is configurable.
+A **command palette** (`Cmd/Ctrl K`) that finds requests and runs commands, quick send (`Cmd/Ctrl Enter`), tab switching (`Cmd/Ctrl 1–9`) — every shortcut is configurable.
 
 ### 🔒 Signed updates
-Every release ships SHA‑256 checksums and **minisign signatures**. The in-app updater refuses any binary that fails either check.
+Every release ships SHA‑256 checksums and **minisign signatures**. The in-app updater refuses any download that fails either check.
 
 ### 🎨 Built to feel good
-Per-workspace accent theming, environments, a cookie jar, request history, and a fast, native-feeling UI.
+The Graphite design — neutral greys, hairline borders, colour only where it means something — with dark and light themes and their variants, environments side by side, a cookie jar that can sync from your browser, and request history with a page for every send.
 
 ## Built with
 
