@@ -1,6 +1,9 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/relay-client/.github/main/profile/assets/logo.png" alt="Relay" width="120" height="120">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/relay-client/.github/main/profile/assets/profile-logo-dark.png">
+  <img src="https://raw.githubusercontent.com/relay-client/.github/main/profile/assets/profile-logo-light.png" alt="Relay" width="120" height="120">
+</picture>
 
 # Relay
 
