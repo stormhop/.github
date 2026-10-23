@@ -2,99 +2,98 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/stormhop/.github/main/profile/assets/profile-logo-dark.png">
-  <img src="https://raw.githubusercontent.com/stormhop/.github/main/profile/assets/profile-logo-light.png" alt="Kurlo" width="120" height="120">
+  <img src="https://raw.githubusercontent.com/stormhop/.github/main/profile/assets/profile-logo-light.png" alt="Kurlo" width="104" height="104">
 </picture>
 
 # Kurlo
 
-<sub>by Stormhop — local-first developer tools</sub>
+**The open-source Postman alternative your AI agent can drive.**
 
-### A fast, local-first desktop API client
-
-No accounts. No cloud sync. No telemetry — just you and your APIs.
+No account. No paid plan. No telemetry. Collections live as YAML in your Git repo.
 
 <br>
 
-[![Download](https://img.shields.io/badge/Download-5865F2?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/stormhop/kurlo/releases/latest)
+[![Download](https://img.shields.io/badge/Download-5865F2?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/stormhop/kurlo/releases/latest)
 &nbsp;
-[![Source](https://img.shields.io/badge/Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stormhop/kurlo)
+[![MCP server](https://img.shields.io/badge/MCP%20server-2b2d31?style=for-the-badge&logo=modelcontextprotocol&logoColor=white)](https://kurlo.dev/mcp/)
 &nbsp;
-[![Docs](https://img.shields.io/badge/Docs-2b2d31?style=for-the-badge&logo=readthedocs&logoColor=white)](https://kurlo.dev)
+[![Docs](https://img.shields.io/badge/Docs-2b2d31?style=for-the-badge&logo=readthedocs&logoColor=white)](https://kurlo.dev/docs/getting-started/installation/)
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](https://github.com/stormhop/kurlo/blob/main/LICENSE)
+[![Release](https://img.shields.io/github/v/release/stormhop/kurlo?style=flat-square&color=5865F2&label=release)](https://github.com/stormhop/kurlo/releases/latest)
 &nbsp;
-[![Platforms](https://img.shields.io/badge/macOS%20·%20Windows%20·%20Linux-2b2d31?style=flat-square)](https://github.com/stormhop/kurlo/releases/latest)
+[![Stars](https://img.shields.io/github/stars/stormhop/kurlo?style=flat-square&color=2b2d31)](https://github.com/stormhop/kurlo/stargazers)
+&nbsp;
+[![npm](https://img.shields.io/npm/v/@kurlo/cli?style=flat-square&color=2b2d31&label=%40kurlo%2Fcli)](https://www.npmjs.com/package/@kurlo/cli)
+&nbsp;
+[![License: MIT](https://img.shields.io/badge/license-MIT-2b2d31?style=flat-square)](https://github.com/stormhop/kurlo/blob/main/LICENSE)
+
+<br>
+
+<img src="https://raw.githubusercontent.com/stormhop/.github/main/profile/assets/demo.gif" alt="Claude Code adds tests to a Kurlo collection over MCP, finds a pricing bug and fixes it, while the tests appear in Kurlo" width="860">
 
 </div>
 
 <br>
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/stormhop/.github/main/profile/assets/screenshot.png" alt="Kurlo workspace" width="860">
-</div>
+<table>
+<tr>
+<td width="50%" valign="top">
 
-<br>
+#### 🧬 Lives in your repo
+Every request is a readable YAML file, reviewed in the same pull request as the API change. Secrets stay encrypted on your machine.
 
-## What is Kurlo
+</td>
+<td width="50%" valign="top">
 
-Kurlo is a modern desktop API client — a polished alternative to Postman and Insomnia — built for engineers who want **speed, privacy, and a UI that feels right**. Everything lives on your machine: workspaces, collections, history, environments and secrets are stored on disk and **encrypted at rest with AES‑256‑GCM** (system keychain on macOS). Nothing leaves your computer.
+#### 🤖 Your agent can press Send
+`kurlo mcp` lets Claude Code, Cursor and Codex run saved requests with their auth and tests, write new ones, and explain the last failure.
 
-**Kurlo is open source under the MIT license.** The full application source lives in [stormhop/kurlo](https://github.com/stormhop/kurlo) — read it, build it, or send a pull request.
+</td>
+</tr>
+<tr>
+<td valign="top">
 
-## Features
+#### 📜 Postman scripts, unchanged
+Import Postman, Insomnia, Bruno, OpenAPI or HAR. `pm.test`, chai and `pm.sendRequest` run as they were written.
 
-### 🌐 Every protocol in one place
-HTTP, **GraphQL**, **Server-Sent Events (SSE)**, **WebSocket**, **Socket.IO**, **gRPC** and **MCP** — all in one request editor. An MCP call discovers the server's tools, resources and prompts, seeds the arguments from the tool's schema, and shows the raw JSON-RPC exchange.
+</td>
+<td valign="top">
 
-### 🔐 All the auth flows
-Bearer, Basic, **Digest** (MD5, SHA-256, SHA-512-256 and their `-sess` variants), API Key, **AWS Signature v4**, client certificates, and **OAuth 2.0** — Client Credentials, Authorization Code with **PKCE**, Password and Device Code, with browser sign-in, refresh tokens and automatic refresh before a request is sent.
+#### 🌐 Sees CORS before your users do
+Send a request under a browser's CORS and CSP rules and get the error in Kurlo, not in production.
 
-### 🧬 Git-backed workspaces
-Store workspaces as clean, reviewable **YAML** and version them with Git — collaborate through pull requests while **secrets stay local**. Built-in Git panel, diagnostics and a three-way conflict resolver for when a repo changes underneath you.
+</td>
+</tr>
+<tr>
+<td valign="top">
 
-### 📜 Scriptable requests
-Pre-request and test scripts in **sandboxed JavaScript** (with legacy Tengo support) and a familiar `pm.*` API: inject headers, rewrite the body, assert on status and JSON schema, set variables, call another endpoint with `pm.sendRequest`. `require` resolves bundled stand-ins for lodash, ajv, chai and friends, so imported Postman scripts keep working.
+#### 🧪 Mock it, test it, run it in CI
+Saved examples become a local mock server. `kurlo run` runs the same tests in CI with JSON and JUnit reports.
 
-### 🔄 Imports that travel
-Import from **Postman, Insomnia, Bruno / OpenCollection, OpenAPI (file or URL), HAR, curl**, or a full Kurlo backup. Export to Postman, OpenAPI, OpenCollection, or an all-data backup.
+</td>
+<td valign="top">
 
-### 🧪 Examples and a local mock server
-Save any response as a named example, secrets redacted, then serve a whole collection of them over HTTP on your own machine — and diff a fresh response against the example it should match.
+#### ⚡ Small and native
+Go and the system WebView instead of Electron: 22 MB on macOS, 11 MB on Linux. HTTP, GraphQL, gRPC, WebSocket, SSE and MCP.
 
-### ▶️ Collection Runner and CLI
-Run a collection sequentially or in parallel, with data files and iterations, export an **HTML report**, and see each collection's last run. `kurlo run` does the same in CI with JSON and JUnit reporters.
+</td>
+</tr>
+</table>
 
-### 🧩 Code generation
-Copy any request as a runnable snippet in **14 targets** — cURL, HTTPie, `fetch`, Axios, Python, Go, Java, C#, PHP, Ruby, Swift, Kotlin, Rust and more.
+## Get started
 
-### ⌨️ Keyboard-first
-A **command palette** (`Cmd/Ctrl K`) that finds requests and runs commands, quick send (`Cmd/Ctrl Enter`), tab switching (`Cmd/Ctrl 1–9`) — every shortcut is configurable.
+Download the app for macOS, Windows or Linux from the [latest release](https://github.com/stormhop/kurlo/releases/latest), or connect your AI agent with one command:
 
-### 🔒 Signed updates
-Every release ships SHA‑256 checksums and **minisign signatures**. The in-app updater refuses any download that fails either check.
-
-### 🎨 Built to feel good
-The Graphite design — neutral greys, hairline borders, colour only where it means something — with dark and light themes and their variants, environments side by side, a cookie jar that can sync from your browser, and request history with a page for every send.
-
-## Built with
-
-<div align="center">
-
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Wails](https://img.shields.io/badge/Wails-DF0000?style=flat-square&logo=wails&logoColor=white)
-![Svelte](https://img.shields.io/badge/Svelte%205-FF3E00?style=flat-square&logo=svelte&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-
-</div>
+```bash
+npx -y @kurlo/cli mcp install
+```
 
 ## Contributing
 
-Bug reports, feature requests, and pull requests are welcome — start with [CONTRIBUTING.md](https://github.com/stormhop/kurlo/blob/main/CONTRIBUTING.md). Questions and ideas belong in [Discussions](https://github.com/stormhop/kurlo/discussions).
-
-Found a security problem? Please report it privately — see [SECURITY.md](https://github.com/stormhop/kurlo/blob/main/SECURITY.md).
+Bug reports, ideas and pull requests are welcome in [stormhop/kurlo](https://github.com/stormhop/kurlo) — start with [CONTRIBUTING.md](https://github.com/stormhop/kurlo/blob/main/CONTRIBUTING.md) or open a [Discussion](https://github.com/stormhop/kurlo/discussions). Security issues go through [SECURITY.md](https://github.com/stormhop/kurlo/blob/main/SECURITY.md).
 
 <br>
 
 <div align="center">
-<sub>Local-first · Encrypted at rest · Open source — <a href="https://github.com/stormhop/kurlo/releases/latest">Get the latest release</a></sub>
+<sub>If Kurlo saves you time, a <a href="https://github.com/stormhop/kurlo">⭐ on the repo</a> helps other people find it.</sub>
 </div>
